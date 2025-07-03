@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Fruit
+  - Damage
+  - Death
+  - Win
+  - Health
+  - Visibility
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Terrain
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1322126719
+    locked: 0
+  - name: sink
+    uniqueID: 4100817299
+    locked: 0
+  - name: Terrain
+    uniqueID: 921250447
+    locked: 0
+  - name: Player
+    uniqueID: 1991612177
+    locked: 0
+  - name: Foreground
+    uniqueID: 4071916267
+    locked: 0
+  m_RenderingLayers:
+  - Default
