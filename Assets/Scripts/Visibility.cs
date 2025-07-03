@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class Visibility : MonoBehaviour
 {
     public GameObject cupboard;
-    public bool initiallyVisible = true;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public GameObject water;
+ 
+    
+   private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             if (cupboard != null)
             {
-                SetVisibility(false);
+                SetCupboardVisibility(false);
+            }
+            
+            if (water != null)
+            {
+                SetWaterVisibility(true);
             }
         }
     }
@@ -23,12 +29,13 @@ public class Visibility : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SetVisibility(true);
+            SetCupboardVisibility(true);
+            SetWaterVisibility(false);
         }
         
     }
 
-    void SetVisibility(bool visibile)
+    void SetCupboardVisibility(bool visibile)
     {
         if (cupboard != null)
         {
@@ -39,17 +46,27 @@ public class Visibility : MonoBehaviour
             }
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-      
 
+    void SetWaterVisibility(bool isVisible)
+    {
+        if (water != null)
+        {
+            Renderer waterRenderer = water.GetComponent<Renderer>();
+                if (waterRenderer != null)
+            {
+                waterRenderer.enabled = isVisible;
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        SetWaterVisibility(false);
     }
+
+  
+  
+
 }
+
 

@@ -50,11 +50,14 @@ TagManager:
   - name: Background
     uniqueID: 1322126719
     locked: 0
+  - name: Terrain
+    uniqueID: 921250447
+    locked: 0
   - name: sink
     uniqueID: 4100817299
     locked: 0
-  - name: Terrain
-    uniqueID: 921250447
+  - name: Cupboard
+    uniqueID: 170935373
     locked: 0
   - name: Player
     uniqueID: 1991612177

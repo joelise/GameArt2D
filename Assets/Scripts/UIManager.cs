@@ -87,7 +87,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateCounter(int amount)
     {
-        fruitCounter.text = "Fruit Collected: " + amount;
+        fruitCounter.text = "Flies Collected: " + amount;
     }
 
     public void UpdateHealth()
