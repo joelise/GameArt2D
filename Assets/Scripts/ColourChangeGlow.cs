@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ColourChangeGlow : MonoBehaviour
@@ -12,8 +14,11 @@ public class ColourChangeGlow : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color originalColor;
     public bool isOriginalColor = true;
-    
-
+    public bool isPlayer;
+    public float damageDelay = 1f;
+    public float timer = 3f;
+  
+    public PlayerMovement player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,9 +46,9 @@ public class ColourChangeGlow : MonoBehaviour
 
     IEnumerator FadeColor(Color from, Color to)
     {
-       
+
         float t = 0f;
-        while(t < 1f)
+        while (t < 1f)
         {
             t += Time.deltaTime / transitionDuration;
             spriteRenderer.color = Color.Lerp(from, to, t);
@@ -51,9 +56,41 @@ public class ColourChangeGlow : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player"))
+        {
+            isPlayer = true;
+        }
+        if (isPlayer == true && isOriginalColor == false)
+        {
+            player.TakeDamage();
+      
+        }
+
 
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (isPlayer == true)
+        {
+            if (timer > 0)
+            {
+                timer -= 1 * Time.deltaTime;
+            }
+
+            else if ((timer <= 0) && isOriginalColor == false)
+            {
+                player.TakeDamage();
+                timer = 3;
+            }
+
+        
+
+           
+             
+        }
+    }
+
 }

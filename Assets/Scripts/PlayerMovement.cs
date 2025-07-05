@@ -152,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
             Die();
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         playerHealth--;
         tookDamage = true;
