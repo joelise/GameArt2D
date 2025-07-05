@@ -142,6 +142,8 @@ public class PlayerMovement : MonoBehaviour
                 timer = 1;
             }
         }
+
+    
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

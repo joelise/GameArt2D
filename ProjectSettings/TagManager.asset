@@ -10,6 +10,7 @@ TagManager:
   - Win
   - Health
   - Visibility
+  - Hot
   layers:
   - Default
   - TransparentFX
