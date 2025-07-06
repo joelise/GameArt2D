@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
                     winPanel.SetActive(false);
                     winPanel.SetActive(true);
 
-                    fruitTotal.text = "You Collected " + player.fruitCollected + " Fruit!";
+                    fruitTotal.text = "You Collected " + player.fruitCollected + " Flies!";
                     break;
                 }
         }   
